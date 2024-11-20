@@ -16,13 +16,13 @@
 
 __visible_for_testing int __init s6e8fc3_a33x_panel_init(void)
 {
-	register_common_panel(&s6e8fc3_a33x_panel_info);
+	decon_register_common_panel(&s6e8fc3_a33x_panel_info);
 	return 0;
 }
 
 __visible_for_testing void __exit s6e8fc3_a33x_panel_exit(void)
 {
-	deregister_common_panel(&s6e8fc3_a33x_panel_info);
+	decon_deregister_common_panel(&s6e8fc3_a33x_panel_info);
 }
 
 module_init(s6e8fc3_a33x_panel_init)

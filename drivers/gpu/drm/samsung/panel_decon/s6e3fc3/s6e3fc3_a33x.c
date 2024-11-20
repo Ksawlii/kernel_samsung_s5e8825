@@ -16,14 +16,13 @@
 
 static int __init s6e3fc3_a33x_panel_init(void)
 {
-	register_common_panel(&s6e3fc3_a33x_panel_info);
-
+	decon_register_common_panel(&s6e3fc3_a33x_panel_info);
 	return 0;
 }
 
 static void __exit s6e3fc3_a33x_panel_exit(void)
 {
-	deregister_common_panel(&s6e3fc3_a33x_panel_info);
+	decon_deregister_common_panel(&s6e3fc3_a33x_panel_info);
 }
 
 module_init(s6e3fc3_a33x_panel_init)
