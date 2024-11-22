@@ -2631,8 +2631,12 @@ static int fts_parse_dt(struct i2c_client *client)
 #endif
 
 #if defined(CONFIG_EXYNOS_DECON_FB)
-	connected = get_lcd_info("connected");
-	if (connected < 0) {
+#if IS_ENABLED(CONFIG_USDM_PANEL)
+		connected = usdm_get_lcd_info("connected");
+#else
+		connected = decon_get_lcd_info("connected");
+#endif
+    if (connected < 0) {
 		input_err(true, dev, "%s: Failed to get lcd info\n", __func__);
 		if (!pdata->chip_on_board)
 			return -EINVAL;
@@ -2646,7 +2650,11 @@ static int fts_parse_dt(struct i2c_client *client)
 
 	input_info(true, &client->dev, "%s: lcd is connected\n", __func__);
 
-	lcdtype = get_lcd_info("id");
+#if IS_ENABLED(CONFIG_USDM_PANEL)
+		lcdtype = usdm_get_lcd_info("id");
+#else
+		lcdtype = decon_get_lcd_info("id");
+#endif
 	if (lcdtype < 0) {
 		input_err(true, dev, "%s: Failed to get lcd info\n", __func__);
 		if (!pdata->chip_on_board)

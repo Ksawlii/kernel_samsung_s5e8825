@@ -842,7 +842,8 @@ extern int get_lcd_attached(char *mode);
 #endif
 
 #if defined(CONFIG_EXYNOS_DECON_FB)
-extern int get_lcd_info(char *arg);
+extern int usdm_get_lcd_info(char *arg);
+extern int decon_get_lcd_info(char *arg);
 #endif
 
 #ifdef CONFIG_MOTOR_DRV_MAX77865

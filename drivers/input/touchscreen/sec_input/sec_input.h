@@ -653,7 +653,8 @@ extern int get_lcd_attached(char *mode);
 #endif
 
 #if IS_ENABLED(CONFIG_EXYNOS_DPU30)
-extern int get_lcd_info(char *arg);
+extern int usdm_get_lcd_info(char *arg);
+extern int decon_get_lcd_info(char *arg);
 #endif
 
 #if IS_ENABLED(CONFIG_MTK_LCM)
