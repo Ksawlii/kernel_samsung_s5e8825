@@ -1584,6 +1584,9 @@ extern void st54spi_exit(void);
 
 static int __init sec_nfc_init(void)
 {
+#if IS_ENABLED(CONFIG_NFC_PN547)
+	return 0;
+#endif
 #if IS_ENABLED(CONFIG_ESE_P3_LSI)
 	spip3_dev_init();
 #endif
@@ -1598,6 +1601,9 @@ static int __init sec_nfc_init(void)
 
 static void __exit sec_nfc_exit(void)
 {
+#if IS_ENABLED(CONFIG_NFC_PN547)	
+    return;
+#endif
 #if IS_ENABLED(CONFIG_ESE_P3_LSI)
 	spip3_dev_exit();
 #endif
