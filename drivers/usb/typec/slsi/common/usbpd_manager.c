@@ -520,11 +520,13 @@ void usbpd_manager_ccopen_req(int is_on)
 	PDIC_OPS_PARAM_FUNC(ops_ccopen_req, pd_data, is_on);
 }
 
+#if IS_ENABLED(CONFIG_PDIC_PD30)
 void usbpd_manager_pps_request_handler(struct work_struct *work)
 {
 	usbpd_info("%s: call pps request handler\n", __func__);
 	usbpd_manager_select_pps(2, 5000, 3000);
 }
+#endif
 
 void usbpd_manager_buck_off_clear_handler(struct work_struct *work)
 {
@@ -2506,9 +2508,11 @@ int usbpd_init_manager(struct usbpd_data *pd_data)
 				usbpd_manager_start_discover_msg_handler);
 	INIT_DELAYED_WORK(&manager->short_check_work, usbpd_manager_short_check_handler);
 	INIT_DELAYED_WORK(&manager->acc_detach_handler, usbpd_manager_acc_detach_handler);
+#if IS_ENABLED(CONFIG_PDIC_PD30)
 	INIT_DELAYED_WORK(&manager->pps_request_handler, usbpd_manager_pps_request_handler);
 	INIT_DELAYED_WORK(&manager->buck_off_clear_handler, usbpd_manager_buck_off_clear_handler);
 	INIT_DELAYED_WORK(&manager->buck_off_handler, usbpd_manager_buck_off_handler);
+#endif
 
 	usbpd_info("%s done\n", __func__);
 	return ret;
