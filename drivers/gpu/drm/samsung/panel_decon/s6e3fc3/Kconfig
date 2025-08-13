@@ -1,9 +1,18 @@
-menuconfig EXYNOS_DECON_LCD_S6E3FC3
+menuconfig EXYNOS_DECON_LCD_S6E3FC3_A33X
 	tristate "S6E3FC3 DDI Panel Driver"
 	depends on MCD_PANEL
 	default n
 	help
-		This enables S6E3FC3 DDI dependent panel drivers of
+		This enables S6E3FC3 A33X DDI dependent panel drivers of
+		common panel driver. say Y, if you have a panel based on
+		the S6E3FC3 DDI.
+
+menuconfig EXYNOS_DECON_LCD_S6E3FC3_A53X
+	tristate "S6E3FC3 DDI Panel Driver"
+	depends on MCD_PANEL
+	default n
+	help
+		This enables S6E3FC3 A53X DDI dependent panel drivers of
 		common panel driver. say Y, if you have a panel based on
 		the S6E3FC3 DDI.
 
