@@ -9,6 +9,12 @@ ifeq ($(CONFIG_ARCH_EXYNOS),y)
 dtbo-y += samsung/a25x/a25x_swa_open_w00_r00.dtbo
 dtbo-y += samsung/a25x/a25x_swa_open_w00_r04.dtbo
 dtbo-y += samsung/a25x/a25x_swa_open_w00_r05.dtbo
+
+dtbo-y += samsung/a53x/a53x_eur_open_w00_r00.dtbo
+dtbo-y += samsung/a53x/a53x_eur_open_w00_r01.dtbo
+dtbo-y += samsung/a53x/a53x_eur_open_w00_r02.dtbo
+dtbo-y += samsung/a53x/a53x_eur_open_w00_r05.dtbo
+dtbo-y += samsung/a53x/a53x_eur_open_w00_r06.dtbo
 endif
 
 targets += dtbs
