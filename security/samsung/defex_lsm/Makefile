@@ -26,7 +26,6 @@ else
 endif
 
 ifneq ($(wildcard $(srctree)/include/crypto/internal/rsa.h),)
-    $(warning [DEFEX] INTEGRITY_ENABLE)
     INTEGRITY_ENABLE=true
 endif
 
@@ -61,26 +60,21 @@ DEFEX_DEFINES += -DDEFEX_PERMISSIVE_INT
 
 ifeq ($(CONFIG_DEFEX_KERNEL_ONLY), y)
     DEFEX_DEFINES += -DDEFEX_KERNEL_ONLY
-    ifeq ($(CONFIG_SAMSUNG_PRODUCT_SHIP), y)
-        $(warning [DEFEX] Kernel_only & Ship)
-    else
-        $(warning [DEFEX] Kernel_only & Noship)
-        defex-y += debug/defex_debug.o
-        defex-y += core/defex_sysfs.o
-        DEFEX_DEFINES += -DDEFEX_PERMISSIVE_INT
-        DEFEX_DEFINES += -DDEFEX_PERMISSIVE_SP
-        DEFEX_DEFINES += -DDEFEX_PERMISSIVE_TM
-        DEFEX_DEFINES += -DDEFEX_PERMISSIVE_IM
-        DEFEX_DEFINES += -DDEFEX_PERMISSIVE_LP
-        DEFEX_DEFINES += -DDEFEX_DEBUG_ENABLE
-	ifeq ($(LOG_BUFFER_ENABLE), true)
-	    DEFEX_DEFINES += -DDEFEX_LOG_BUFFER_ENABLE
-	endif
-	ifeq ($(SHOW_RULES_ENABLE), true)
-	    defex-y += debug/defex_rules_show.o
-	    DEFEX_DEFINES += -DDEFEX_SHOW_RULES_ENABLE
-	endif
-    endif
+    defex-y += debug/defex_debug.o
+    defex-y += core/defex_sysfs.o
+    DEFEX_DEFINES += -DDEFEX_PERMISSIVE_INT
+    DEFEX_DEFINES += -DDEFEX_PERMISSIVE_SP
+    DEFEX_DEFINES += -DDEFEX_PERMISSIVE_TM
+    DEFEX_DEFINES += -DDEFEX_PERMISSIVE_IM
+    DEFEX_DEFINES += -DDEFEX_PERMISSIVE_LP
+    DEFEX_DEFINES += -DDEFEX_DEBUG_ENABLE
+	  ifeq ($(LOG_BUFFER_ENABLE), true)
+	      DEFEX_DEFINES += -DDEFEX_LOG_BUFFER_ENABLE
+	  endif
+	  ifeq ($(SHOW_RULES_ENABLE), true)
+	      defex-y += debug/defex_rules_show.o
+	      DEFEX_DEFINES += -DDEFEX_SHOW_RULES_ENABLE
+	  endif
 endif
 
 ifeq ($(CONFIG_SEC_FACTORY), y)
@@ -147,12 +141,10 @@ ifeq ($(TRUSTED_MAP_ENABLE), true)
 endif
 
 ifeq ($(USER_BUILD), true)
-    $(warning [DEFEX] DEBUG_DISABLE)
     ifeq ($(CONFIG_SECURITY_DSMS), y)
         DEFEX_DEFINES += -DDEFEX_DSMS_ENABLE
     endif
 else
-    $(warning [DEFEX] DEBUG_ENABLE)
     defex-y += debug/defex_debug.o
     defex-y += core/defex_sysfs.o
     DEFEX_DEFINES += -DDEFEX_PERMISSIVE_INT
@@ -212,7 +204,6 @@ ifneq ($(wildcard  $(srctree)/$(src)/pack_rules.c),)
 
     SOURCE_RULES := $(srctree)/$(src)/defex_rules.c
     ifneq ($(wildcard $(srctree)/$(src)/file_list),)
-        $(warning '[DEFEX] file_list found')
         SOURCE_RULES := $(srctree)/$(src)/defex_rules_reduced.c
         DEPEND_LIST += $(SOURCE_RULES)
         DEPEND_LIST += $(srctree)/$(src)/file_list
