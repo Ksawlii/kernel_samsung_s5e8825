@@ -160,3 +160,6 @@ sphinx_*/
 
 # Useless samsung stuff
 security/samsung/defex_lsm/pack_rules
+
+# Built stuff
+include/linux/olog*
