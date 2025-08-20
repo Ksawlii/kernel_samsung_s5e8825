@@ -14,7 +14,6 @@
 obj-$(CONFIG_HDM)		+= hdm.o
 
 ifeq ($(CONFIG_UH), y)
-    $(warning [HDM] CONFIG_UH Enabled)
     hdm-objs = main.o uh_entry.o
     ccflags-y += -DCONFIG_HDM_UH=true
 else
