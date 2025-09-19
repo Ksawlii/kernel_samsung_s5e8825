@@ -15,6 +15,7 @@
 
 #include "../panel.h"
 #include "../panel_drv.h"
+#include "../panel_blic.h"
 #include "tft_common.h"
 #include "nt36672c_m33_01_resol.h"
 
