@@ -228,3 +228,9 @@ config SEC_NFC_COMPAT_IOCTL
         default n
         help
           Enable NFC compat ioctl.
+
+config NXP_NFC
+        bool "NXP NFC"
+        default n
+        help
+          Enable NXP NFC support.
