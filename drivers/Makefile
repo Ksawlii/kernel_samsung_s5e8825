@@ -240,6 +240,7 @@ obj-y += sensorhub/ # ADDED BY LEGO AUTOMATICALLY: DO NOT SUBMIT
 obj-y += nfc/snvm/ # ADDED BY LEGO AUTOMATICALLY: DO NOT SUBMIT
 obj-y += vibrator/dc/ # ADDED BY LEGO AUTOMATICALLY: DO NOT SUBMIT
 obj-y += input/touchscreen/focaltech/ft3519/ # ADDED BY LEGO AUTOMATICALLY: DO NOT SUBMIT
+obj-y += sensors/ # ADDED BY LEGO AUTOMATICALLY: DO NOT SUBMIT
 obj-y += sensors_lego/ # ADDED BY LEGO AUTOMATICALLY: DO NOT SUBMIT
 obj-y += battery/charger/s2mf301_charger/ # ADDED BY LEGO AUTOMATICALLY: DO NOT SUBMIT
 obj-y += battery/common/ # ADDED BY LEGO AUTOMATICALLY: DO NOT SUBMIT
