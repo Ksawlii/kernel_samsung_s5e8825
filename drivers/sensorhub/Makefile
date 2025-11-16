@@ -22,6 +22,17 @@ shub-y	+= factory/gyroscope/gyroscope_lsm6dsvtr_factory.o
 shub-y	+= factory/gyroscope/gyroscope_icm42632m_factory.o
 shub-y += factory/light/light_factory.o
 
+shub-y += sensor/physical_sensor/accelerometer/accelerometer_icm42605m.o
+shub-y += sensor/physical_sensor/accelerometer/accelerometer_lsm6dsl.o
+shub-y += sensor/physical_sensor/accelerometer/accelerometer_lis2dlc12.o
+shub-y += sensor/physical_sensor/accelerometer/accelerometer_lsm6dsotr.o
+shub-y += sensor/physical_sensor/accelerometer/accelerometer_lsm6dsvtr.o
+shub-y += sensor/physical_sensor/accelerometer/accelerometer_icm42632m.o
+shub-y += sensor/physical_sensor/gyroscope/gyroscope_icm42605m.o
+shub-y += sensor/physical_sensor/gyroscope/gyroscope_lsm6dsl.o
+shub-y += sensor/physical_sensor/gyroscope/gyroscope_lsm6dsotr.o
+shub-y += sensor/physical_sensor/gyroscope/gyroscope_lsm6dsvtr.o
+shub-y += sensor/physical_sensor/gyroscope/gyroscope_icm42632m.o
 shub-y += factory/magnetometer/magnetometer_factory.o
 shub-y += factory/magnetometer/magnetometer_ak09918c_factory.o
 shub-y += factory/magnetometer/magnetometer_mmc5633_factory.o
@@ -104,6 +115,7 @@ shub-y += sensor/physical_sensor/proximity/proximity_stk3391x.o
 shub-y += sensor/physical_sensor/proximity/proximity_stk3afx.o
 shub-y += sensor/physical_sensor/proximity/proximity_tmd3725.o
 shub-y += sensor/physical_sensor/light/light_common.o
+shub-y += sensor/physical_sensor/light/light_stk_common.o
 
 shub-y += sensor/physical_sensor/pressure/pressure_bmp580.o
 shub-y += sensor/physical_sensor/pressure/pressure_lps22hh.o
